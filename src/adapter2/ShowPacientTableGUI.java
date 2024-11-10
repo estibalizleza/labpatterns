@@ -29,6 +29,8 @@ public class ShowPacientTableGUI extends JFrame{
 	    pane.setPreferredSize(
 	      new java.awt.Dimension(300, 200));
 	    this.getContentPane().add(pane);
+	    this.pack();
+	    this.setVisible(true);
 	    
 	  
   }

@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import adapter.Sorting;
 import domain.Covid19Pacient;
 import domain.Symptom;
 
@@ -20,9 +21,16 @@ import domain.Symptom;
 			p.addSymptom(new Symptom("s5", 10, 10), 5);
 			
 			Iterator i=p.iterator();
-			while(i.hasNext())
-				System.out.println(i.next());
+			//while(i.hasNext())
+				//System.out.println(i.next());
 
+			ComSeverityIndex sev = new ComSeverityIndex();
+			Covid19PacientIterator pacientIterator = new Covid19PacientIterator(p.getSymptoms());
+			Covid19PacientAdapter pacientInverted = new Covid19PacientAdapter(pacientIterator);
+			Sorting.sortedIterator(pacientInverted, sev);
+			while(pacientIterator.hasNext())
+				System.out.println(pacientIterator.next());
+			
 		}
 
 	}

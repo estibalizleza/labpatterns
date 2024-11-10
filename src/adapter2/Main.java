@@ -1,6 +1,7 @@
 package adapter2;
 
 import domain.Covid19Pacient;
+import domain.SymptomFactory;
 
 public class Main {
 
